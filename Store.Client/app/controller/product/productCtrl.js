@@ -12,12 +12,12 @@
             dataService.getAllProduct().then(
                 function (results) {
                     vm.load = true;
-                    return results.data;
+                    vm.values = results;
                 });
         }
     }
 
-    tracksController.$inject = injectParameters;
+    productCtrl.$inject = injectParameters;
     angular.module('angularApp').controller('productCtrl', productCtrl);
 
 }());

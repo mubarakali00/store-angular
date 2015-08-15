@@ -15,7 +15,7 @@ namespace Store.Service.Helper
         {
             var cat = new CategoryModel();
 
-            if (cat != null)
+            if (model != null)
             {
                 cat.CategoryDescription = model.CategoryDescription;
                 cat.CategoryId = model.CategoryId;

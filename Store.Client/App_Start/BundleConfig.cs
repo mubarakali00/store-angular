@@ -41,9 +41,10 @@ namespace Store.Client
                 "~/Scripts/bootstrap.js",
                 "~/app/angularApp.js",
                 "~/app/dataService.js",
+                "~/app/controller/product/productCtrl.js",
                 "~/app/controller/tracks/tracksController.js",
                 "~/app/controller/contact/contactController.js",
-                "~/Custom Scripts/loading-bar.js"
+                "~/Custom Script/loading-bar.js"
                 ));
 
             BundleTable.EnableOptimizations = true;

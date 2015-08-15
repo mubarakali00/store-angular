@@ -6,13 +6,13 @@
 
         var factory = {};
 
-        factory.getAllTracks = function () {
+        //factory.getAllTracks = function () {
 
-            return $http.get('Track/GetAllTracks').then(
-                function (results) {
-                    return results.data;
-            });
-        }
+        //    return $http.get('Track/GetAllTracks').then(
+        //        function (results) {
+        //            return results.data;
+        //    });
+        //}
 
         factory.getAllProduct = function () {
 

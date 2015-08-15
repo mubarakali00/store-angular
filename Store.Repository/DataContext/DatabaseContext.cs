@@ -13,12 +13,12 @@ namespace Store.Repository.DataContext
     public class DatabaseContext : DataConnection, IUnitOfWork
     {
 
+        //public DatabaseContext()
+        //{
+
+        //}
+
         public DatabaseContext()
-        {
-
-        }
-
-        public DatabaseContext(string configuration)
             : base(ConfigurationManager.ConnectionStrings["northwind-local"].Name)
         {
 

@@ -1,5 +1,6 @@
-﻿<div ng-if="vm.load">
-    <table class="table table-striped table-bordered table-condensed">
+﻿<div>
+    <!--<table class="table table-striped table-bordered table-condensed">-->
+    <table class="table table-condensed table-bordered table-striped">
         <thead>
             <tr>
                 <th>Product Id</th>
@@ -15,17 +16,17 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td><label ng-bind="vm.productId"/></td>
-                <td><label ng-bind="vm.name" /></td>
-                <td><label ng-bind="vm.supplierId" /></td>
-                <td><label ng-bind="vm.categoryId" /></td>
-                <td><label ng-bind="vm.quantityPerUnit" /></td>
-                <td><label ng-bind="vm.unitPrice" /></td>
-                <td><label ng-bind="vm.unitsInStock" /></td>
-                <td><label ng-bind="vm.unitsOnOrder" /></td>
-                <td><label ng-bind="vm.reorderLevel" /></td>
-                <td><label ng-bind="vm.discontinued" /></td>
+            <tr ng-repeat="item in vm.values">
+                <td><label ng-bind="item.productId" /></td>
+                <td><label ng-bind="item.name" /></td>
+                <td><label ng-bind="item.supplierId" /></td>
+                <td><label ng-bind="item.categoryId" /></td>
+                <td><label ng-bind="item.quantityPerUnit" /></td>
+                <td><label ng-bind="item.unitPrice" /></td>
+                <td><label ng-bind="item.unitsInStock" /></td>
+                <td><label ng-bind="item.unitsOnOrder" /></td>
+                <td><label ng-bind="item.reorderLevel" /></td>
+                <td><label ng-bind="item.discontinued" /></td>
             </tr>
         </tbody>
     </table>

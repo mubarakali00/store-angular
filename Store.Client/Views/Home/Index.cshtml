@@ -1,5 +1,5 @@
 ﻿@{
-    //ViewBag.Title = "First Angular Application";
+    ViewBag.Title = "First Angular Application";
     Layout = null;
 }
 
@@ -8,7 +8,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <title></title>
+    <title>{{title}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <!--[if lt IE 9]>
@@ -40,7 +40,7 @@
         </div>
     </div>
     <div class="container">
-        <div class="text-center">
+        <div>
             <div ng-view></div>
         </div>
 

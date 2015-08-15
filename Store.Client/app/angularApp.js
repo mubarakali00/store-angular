@@ -8,8 +8,8 @@
         $routeProvider
             .when('/', {
                 title: 'Products Page',
-                templateUrl: baseUrl + 'tracks/trackListView.html',
-                controller: 'tracksController',
+                templateUrl: baseUrl + 'product/productListPage.html',
+                controller: 'productCtrl',
                 controllerAs: 'vm'
             })
             .when('/contact', {

@@ -1,0 +1,31 @@
+﻿{{vm.Message}}
+<div>
+    <table class="table table-striped table-bordered table-condensed">
+        <thead>
+            <tr>
+                <th>Track ID</th>
+                <th>Track Name</th>
+                <th>Album Id</th>
+                <th>Genre Id</th>
+                <th>Composer</th>
+                <th>Unit Price</th>
+                <th>Album Title</th>
+                <th>Artist Id</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="track in vm.tracks">
+                <td>{{track.trackId}}</td>
+                <td>{{track.name}}</td>
+                <td>{{track.albumId}}</td>
+                <td>{{track.genreId}}</td>
+                <td>{{track.albumTitle}}</td>
+                <td>{{track.artistId}}</td>
+                <td>{{track.byte}}</td>
+                <td>{{track.composer}}</td>
+                <td>{{track.millisecond}}</td>
+                <td>{{track.unitPrice}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -237,6 +237,16 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Store.Model\Store.Model.csproj">
+      <Project>{0689a82b-b93f-4295-86a2-06a2ef67c8bd}</Project>
+      <Name>Store.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Store.Service\Store.Service.csproj">
+      <Project>{2d0ecc66-081d-4636-8812-052aa7ee9bc4}</Project>
+      <Name>Store.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

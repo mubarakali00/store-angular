@@ -39,7 +39,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helper\EntityToModelHelper.cs" />
+    <Compile Include="Helper\ModelToEntityHelper.cs" />
+    <Compile Include="Products\IProductService.cs" />
+    <Compile Include="Products\ProductService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Store.Model\Store.Model.csproj">
+      <Project>{0689a82b-b93f-4295-86a2-06a2ef67c8bd}</Project>
+      <Name>Store.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Store.Repository\Store.Repository.csproj">
+      <Project>{687cfa62-9989-461f-b425-6eabd0550ce8}</Project>
+      <Name>Store.Repository</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -180,6 +180,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
@@ -199,7 +200,7 @@
     <Content Include="app\controller\tracks\tracksController.js" />
     <Content Include="app\dataService.js" />
     <Content Include="app\view\contact\contactView.html" />
-    <Content Include="app\view\product\productListPage.html" />
+    <Content Include="app\view\product\productPage.html" />
     <Content Include="app\view\tracks\trackListView.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -279,6 +280,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Category\" />
     <Folder Include="Views\Product\" />
   </ItemGroup>
   <ItemGroup>

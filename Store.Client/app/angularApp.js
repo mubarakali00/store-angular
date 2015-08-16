@@ -8,7 +8,7 @@
         $routeProvider
             .when('/', {
                 title: 'Products Page',
-                templateUrl: baseUrl + 'product/productListPage.html',
+                templateUrl: baseUrl + 'product/productPage.html',
                 controller: 'productCtrl',
                 controllerAs: 'vm'
             })
@@ -25,7 +25,7 @@
         $locationProvider.html5Mode(true);
 
         cfpLoadingBarProvider.includeSpinner = false;
-        cfpLoadingBarProvider.latencyThreshold = 50;
+        cfpLoadingBarProvider.latencyThreshold = 100;
 
     }]);
 

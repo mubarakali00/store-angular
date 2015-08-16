@@ -1,0 +1,60 @@
+﻿<div>
+    <form name="productForm" data-ng-submit="sendForm()" novalidate>
+        <table class="table-condensed">
+            <tr>
+                <td>
+                    Category 
+                </td>
+                <td>
+                    <select data-ng-model="category" data-ng-options="c.categoryId as c.categoryName for c in vm.categories" data-ng-change="vm.getProducts()">
+                        <option value="">-- Please Select --</option>
+                    </select>
+                </td>
+            </tr>
+            <!--<tr>
+                <td>
+                    Supplier 
+                </td>
+                <td>
+                    <select data-ng-model="supplier" data-ng-options="s.supplierId as s.supplierName for s in vm.suppliers" data-ng-change="getProducts()">
+                        <option value="">-- Please Select --</option>
+                    </select>
+                </td>
+            </tr>-->
+        </table>
+    </form>
+
+    <label ng-bind="vm.message"></label>
+    <div data-ng-show="vm.load">
+        <table class="table table-condensed table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Product Id</th>
+                    <th>Name</th>
+                    <th>Supplier Id</th>
+                    <th>Category Id</th>
+                    <th>Quantity Per Unit</th>
+                    <th>Unit Price</th>
+                    <th>Units In Stock</th>
+                    <th>Units On Order</th>
+                    <th>Reorder Level</th>
+                    <th>Discontinued</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-ng-repeat="item in vm.values">
+                    <td><label ng-bind="item.productId" /></td>
+                    <td><label ng-bind="item.name" /></td>
+                    <td><label ng-bind="item.supplierId" /></td>
+                    <td><label ng-bind="item.categoryId" /></td>
+                    <td><label ng-bind="item.quantityPerUnit" /></td>
+                    <td><label ng-bind="item.unitPrice" /></td>
+                    <td><label ng-bind="item.unitsInStock" /></td>
+                    <td><label ng-bind="item.unitsOnOrder" /></td>
+                    <td><label ng-bind="item.reorderLevel" /></td>
+                    <td><label ng-bind="item.discontinued" /></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

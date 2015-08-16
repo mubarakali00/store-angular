@@ -28,11 +28,36 @@ namespace Store.Service.Helper
         }
         #endregion
 
+        #region Takes and IEnumerable of Category entity and returns a list of CategoryModel
+        public List<CategoryModel> getCategory(IEnumerable<Category> list)
+        {
+            var modelList = new List<CategoryModel>();
+            if(list.Count() > 0)
+            {
+                foreach (var model in list)
+                {
+                    var cat = new CategoryModel();
+                    if (model != null)
+                    {
+                        cat.CategoryDescription = model.CategoryDescription;
+                        cat.CategoryId = model.CategoryId;
+                        cat.CategoryName = model.CategoryName;
+                        cat.CategoryPicture = model.CategoryPicture;
+                        cat.Products = getProduct(model.Products);
+                    }
+                    modelList.Add(cat);
+                }
+            }
+
+            return modelList;
+        }
+        #endregion
+
         #region Takes Product entity and returns ProductModel
         public List<ProductModel> getProduct(IEnumerable<Product> data)
         {
             var list = new List<ProductModel>();
-            if (data.Count() > 0)
+            if (data != null)
             {
                 foreach (var model in data)
                 {
@@ -60,7 +85,7 @@ namespace Store.Service.Helper
         }
         #endregion
 
-        #region Takes an IEnumerable of Supplier entity and returns IEnumberable of SupplierModel
+        #region Takes an IEnumerable of Supplier entity and returns List of SupplierModel
         public List<SupplierModel> getSupplier(IEnumerable<Supplier> data)
         {
             var list = new List<SupplierModel>();

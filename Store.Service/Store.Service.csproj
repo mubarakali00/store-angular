@@ -39,6 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Categories\CategoryService.cs" />
+    <Compile Include="Categories\ICategoryService.cs" />
     <Compile Include="Helper\EntityToModelHelper.cs" />
     <Compile Include="Helper\ModelToEntityHelper.cs" />
     <Compile Include="Products\IProductService.cs" />

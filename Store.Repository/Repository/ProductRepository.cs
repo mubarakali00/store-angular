@@ -24,5 +24,10 @@ namespace Store.Repository.Repository
         {
             return _entity.ToList().AsQueryable();
         }
+
+        public IQueryable<Product> GetProductByCategoryId(int Id)
+        {
+            return _entity.Where(p => p.CategoryId == Id).ToList().AsQueryable();
+        }
     }
 }

@@ -1,12 +1,38 @@
 ﻿(function () {
 
-    var injectParameters = ["dataService"];
+    var injectParameters = ["$scope","dataService"];
 
-    var productCtrl = function (dataService) {
+    var productCtrl = function ($scope, dataService) {
 
         var vm = this;
         vm.load = false;
-        init();
+        vm.values = null;
+        //init();
+        getCategories();
+
+        function getCategories() {
+
+            dataService.getAllCategory().then(
+                function (result) {
+                    vm.categories = result;
+                });
+        }
+
+        vm.getProducts = function() {
+            var id = $scope.category;
+            if (id) {
+                dataService.getProductByCategoryId(id).then(
+                function (results) {
+                    vm.values = results.data;
+                    vm.load = true;
+                });
+            }
+            else {
+                vm.load = false;
+
+            }
+            
+        }
 
         function init() {
             dataService.getAllProduct().then(

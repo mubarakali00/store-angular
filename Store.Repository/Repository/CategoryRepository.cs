@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Store.Repository.Repository
 {
-    public class CategoryRepository : DatabaseContext, IGenericRepository<Category>
+    public class CategoryRepository : DatabaseContext, ICategoryRepository
     {
         private IUnitOfWork _context;
         private ITable<Category> _entity;
@@ -24,5 +24,11 @@ namespace Store.Repository.Repository
         {
             return _entity.ToList().AsQueryable();
         }
+
+        public IQueryable<Category> GetDDL()
+        {
+            return _entity.Select(c => new Category { CategoryId = c.CategoryId, CategoryName = c.CategoryName }).ToList().AsQueryable();
+        }
+
     }
 }

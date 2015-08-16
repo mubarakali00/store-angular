@@ -1,7 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
-using Store.Model;
-using Store.Service.Products;
+using Store.Service.Categories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,47 +9,31 @@ using System.Web.Mvc;
 
 namespace Store.Client.Controllers
 {
-    public class ProductController : Controller
+    public class CategoryController : Controller
     {
         JsonSerializerSettings _camelCaseFormatter;
-        IProductService _service;
+        ICategoryService _service;
 
-        public ProductController(IProductService service)
+        public CategoryController(ICategoryService service)
         {
             this._service = service;
         }
 
-        // GET: Product
+        // GET: Category
         public ActionResult Index()
         {
             return View();
         }
 
         [HttpGet]
-        public ActionResult GetAllProduct()
+        public ActionResult GetAllCategory()
         {
-            var list = _service.GetAllProduct();
-
+            var list = _service.GetDDL();
             var jsonResult = new ContentResult
             {
                 Content = JsonConvert.SerializeObject(list, Formatter),
                 ContentType = "application/json"
             };
-
-            return jsonResult;
-        }
-
-        [HttpPost]
-        public ActionResult GetProductByCategoryId(int CategoryId)
-        {
-            var list = _service.GetProductByCategoryId(CategoryId);
-
-            var jsonResult = new ContentResult
-            {
-                Content = JsonConvert.SerializeObject(list, Formatter),
-                ContentType = "application/json"
-            };
-
             return jsonResult;
         }
 

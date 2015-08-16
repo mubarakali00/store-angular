@@ -32,5 +32,14 @@ namespace Store.Service.Products
             return productList.AsQueryable();
         }
 
+        public IQueryable<ProductModel> GetProductByCategoryId(int Id)
+        {
+            var productList = new List<ProductModel>();
+            var products = _repo.GetProductByCategoryId(Id);
+            productList = _eTomHelper.getProduct(products);
+
+            return productList.AsQueryable();
+        }
+
     }
 }

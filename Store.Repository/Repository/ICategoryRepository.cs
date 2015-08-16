@@ -9,5 +9,6 @@ namespace Store.Repository.Repository
 {
     public interface ICategoryRepository : IGenericRepository<Category>
     {
+        IQueryable<Category> GetDDL();
     }
 }

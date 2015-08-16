@@ -11,5 +11,7 @@ namespace Store.Service.Products
     public interface IProductService
     {
         IQueryable<ProductModel> GetAllProduct();
+
+        IQueryable<ProductModel> GetProductByCategoryId(int Id);
     }
 }

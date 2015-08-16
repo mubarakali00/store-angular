@@ -13,6 +13,7 @@ namespace Store.Client.App_Start
     using Store.Repository.DataContext;
     using Store.Repository.Repository;
     using Store.Service.Products;
+    using Store.Service.Categories;
 
     public static class NinjectWebCommon 
     {
@@ -67,7 +68,8 @@ namespace Store.Client.App_Start
             kernel.Bind<IUnitOfWork>().To<DatabaseContext>().InRequestScope();
             kernel.Bind<IProductRepository>().To<ProductRepository>().InRequestScope();
             kernel.Bind<IProductService>().To<ProductService>().InRequestScope();
-
+            kernel.Bind<ICategoryRepository>().To<CategoryRepository>().InRequestScope();
+            kernel.Bind<ICategoryService>().To<CategoryService>().InRequestScope();
         }        
     }
 }

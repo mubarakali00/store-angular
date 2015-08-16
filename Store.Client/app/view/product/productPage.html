@@ -1,4 +1,8 @@
 ﻿<div>
+    <div>
+        <a ng-click="vm.navigate('/editProduct/0')">Add product</a>
+    </div>
+    <br/>
     <form name="productForm" data-ng-submit="sendForm()" novalidate>
         <table class="table-condensed">
             <tr>
@@ -24,7 +28,6 @@
         </table>
     </form>
 
-    <label ng-bind="vm.message"></label>
     <div data-ng-show="vm.load">
         <table class="table table-condensed table-bordered table-striped">
             <thead>

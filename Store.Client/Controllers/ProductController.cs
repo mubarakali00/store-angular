@@ -54,6 +54,17 @@ namespace Store.Client.Controllers
             return jsonResult;
         }
 
+        [HttpPost]
+        public ActionResult SaveProduct(ProductModel model)
+        {
+            if(model != null)
+            {
+                model.SupplierId = 1;
+                _service.SaveProduct(model);
+            }
+            return new HttpStatusCodeResult(201, "Created Successfully");
+        }
+
         public JsonSerializerSettings Formatter
         {
             get

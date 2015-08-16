@@ -13,5 +13,7 @@ namespace Store.Service.Products
         IQueryable<ProductModel> GetAllProduct();
 
         IQueryable<ProductModel> GetProductByCategoryId(int Id);
+
+        void SaveProduct(ProductModel product);
     }
 }

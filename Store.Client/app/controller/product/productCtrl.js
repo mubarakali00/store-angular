@@ -1,8 +1,8 @@
 ﻿(function () {
 
-    var injectParameters = ["$scope","dataService"];
+    var injectParameters = ["$scope","$location","dataService"];
 
-    var productCtrl = function ($scope, dataService) {
+    var productCtrl = function ($scope, $location, dataService) {
 
         var vm = this;
         vm.load = false;
@@ -33,6 +33,10 @@
             }
             
         }
+
+        vm.navigate = function (url) {
+            $location.path(url);
+        };
 
         function init() {
             dataService.getAllProduct().then(

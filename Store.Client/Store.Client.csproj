@@ -197,9 +197,11 @@
     <Content Include="app\angularApp.js" />
     <Content Include="app\controller\contact\contactController.js" />
     <Content Include="app\controller\product\productCtrl.js" />
+    <Content Include="app\controller\product\productEditCtrl.js" />
     <Content Include="app\controller\tracks\tracksController.js" />
     <Content Include="app\dataService.js" />
     <Content Include="app\view\contact\contactView.html" />
+    <Content Include="app\view\product\editProductPage.html" />
     <Content Include="app\view\product\productPage.html" />
     <Content Include="app\view\tracks\trackListView.html" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -228,6 +230,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <None Include="Properties\PublishProfiles\amazon ec2.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

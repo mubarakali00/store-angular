@@ -9,7 +9,7 @@ namespace Store.Repository.DataContext
 {
     public interface IUnitOfWork : IDisposable
     {
-        int Save();
+        //int Save();
 
         ITable<TEntity> GetEntity<TEntity>() where TEntity : class;
     }

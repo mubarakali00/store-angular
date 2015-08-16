@@ -38,6 +38,15 @@
             });
         }
 
+        factory.saveProduct = function (product) {
+
+            return $http.post('/Product/SaveProduct/', product).then(
+                function (results) {
+                    product.productId = results.data;
+                    return results.data;
+            });
+        }
+
         return factory;
     };
 

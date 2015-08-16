@@ -12,6 +12,12 @@
                 controller: 'productCtrl',
                 controllerAs: 'vm'
             })
+            .when('/editProduct/:productId', {
+                title: 'Product Insert / Update Page',
+                templateUrl: baseUrl + 'product/editProductPage.html',
+                controller: 'productEditCtrl',
+                controllerAs: 'vm'
+            })
             .when('/contact', {
                 title: 'Contact View Page',
                 templateUrl: baseUrl + 'contact/contactView.html',

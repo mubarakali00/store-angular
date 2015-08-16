@@ -1,0 +1,53 @@
+﻿<div class="container">
+    <div class="text-center">
+        <h3>
+            <span data-ng-hide="vm.productId == 0">Edit</span><span data-ng-hide="vm.productId != 0">Add</span> Product
+        </h3>
+    </div>
+    <table class="table-condensed" ng-show="vm.statusMessage == ''">
+        <tr>
+            <td>Product Name</td>
+            <td><input type="text" name="name" class="form-control" data-ng-model="vm.product.name" /></td>
+        </tr>
+        <tr>
+            <td>Quantity Per Unit</td>
+            <td><input type="text" name="quantityPerUnit" class="form-control" data-ng-model="vm.product.quantityPerUnit" /></td>
+        </tr>
+        <tr>
+            <td>Unit Price</td>
+            <td><input type="text" name="unitPrice" class="form-control" data-ng-model="vm.product.unitPrice" /></td>
+        </tr>
+        <tr>
+            <td>Units In Stock</td>
+            <td><input type="text" name="unitsInStock" class="form-control" data-ng-model="vm.product.unitsInStock" /></td>
+        </tr>
+        <tr>
+            <td>Units On Order</td>
+            <td><input type="text" name="unitsOnOrder" class="form-control" data-ng-model="vm.product.unitsOnOrder" /></td>
+        </tr>
+        <tr>
+            <td>Reorder Level</td>
+            <td><input type="text" name="reorderLevel" class="form-control" data-ng-model="vm.product.reorderLevel" /></td>
+        </tr>
+        <tr>
+            <td>Discontinued</td>
+            <td><input type="text" name="discontinued" class="form-control" data-ng-model="vm.product.discontinued" /></td>
+        </tr>
+        <tr>
+            <td>Category</td>
+            <td>
+                <select data-ng-model="vm.product.categoryId" class="form-control" data-ng-options="c.categoryId as c.categoryName for c in vm.categories"></select>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button data-ng-click="vm.saveProduct()">Save</button>
+            </td>
+        </tr>
+    </table>
+
+    <div ng-show="vm.statusMessage != ''">
+        {{vm.statusMessage}}
+    </div>
+</div>

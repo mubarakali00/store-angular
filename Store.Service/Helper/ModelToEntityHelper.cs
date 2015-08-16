@@ -15,7 +15,7 @@ namespace Store.Service.Helper
         {
             var cat = new Category();
 
-            if (cat != null)
+            if (model != null)
             {
                 cat.CategoryDescription = model.CategoryDescription;
                 cat.CategoryId = model.CategoryId;
@@ -57,6 +57,31 @@ namespace Store.Service.Helper
                 }
             }
             return list.AsEnumerable();
+        }
+        #endregion
+
+        #region From ProductModel to Product entity conversion
+        public Product getProduct(ProductModel model)
+        {
+            var prod = new Product();
+
+            if (model != null)
+            {
+                prod.CategoryId = model.CategoryId;
+                prod.Discontinued = model.Discontinued;
+                prod.Name = model.Name;
+                prod.ProductCategory = getCategory(model.ProductCategory);
+                prod.ProductId = model.ProductId;
+                prod.ProductSupplier = getSupplier(model.ProductSupplier);
+                prod.QuantityPerUnit = model.QuantityPerUnit;
+                prod.ReorderLevel = model.ReorderLevel;
+                prod.SupplierId = model.SupplierId;
+                prod.UnitPrice = model.UnitPrice;
+                prod.UnitsInStock = model.UnitsInStock;
+                prod.UnitsOnOrder = model.UnitsOnOrder;
+            }
+
+            return prod;
         }
         #endregion
 

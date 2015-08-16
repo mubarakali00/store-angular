@@ -31,10 +31,10 @@ namespace Store.Repository.DataContext
         public ITable<Supplier> Suppliers { get { return GetEntity<Supplier>(); } }
 
 
-        public int Save()
-        {
-            return this.Save();
-        }
+        //public int Save()
+        //{
+        //    return this.Save();
+        //}
 
         public ITable<TEntity> GetEntity<TEntity>() where TEntity : class
         {

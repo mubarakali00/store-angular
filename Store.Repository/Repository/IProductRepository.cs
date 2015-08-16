@@ -10,5 +10,7 @@ namespace Store.Repository.Repository
     public interface IProductRepository : IGenericRepository<Product>
     {
         IQueryable<Product> GetProductByCategoryId(int Id);
+
+        void SaveProduct(Product p);
     }
 }

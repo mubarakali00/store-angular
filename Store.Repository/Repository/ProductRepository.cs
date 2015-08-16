@@ -27,7 +27,20 @@ namespace Store.Repository.Repository
 
         public IQueryable<Product> GetProductByCategoryId(int Id)
         {
-            return _entity.Where(p => p.CategoryId == Id).ToList().AsQueryable();
+            var list = _entity.Where(p => p.CategoryId == Id).ToList().AsQueryable();
+            _context.Dispose();
+            return list;
+        }
+
+        public void SaveProduct(Product p)
+        {
+            using(var db = new DatabaseContext())
+            {
+                var id = db.Products.Max(a => a.ProductId);
+                id++;
+                p.ProductId = id;
+                db.Insert(p);
+            }
         }
     }
 }

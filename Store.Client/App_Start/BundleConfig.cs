@@ -42,6 +42,7 @@ namespace Store.Client
                 "~/app/angularApp.js",
                 "~/app/dataService.js",
                 "~/app/controller/product/productCtrl.js",
+                "~/app/controller/product/productEditCtrl.js",
                 "~/app/controller/tracks/tracksController.js",
                 "~/app/controller/contact/contactController.js",
                 "~/Custom Script/loading-bar.js"

@@ -41,5 +41,9 @@ namespace Store.Service.Products
             return productList.AsQueryable();
         }
 
+        public void SaveProduct(ProductModel product)
+        {
+            _repo.SaveProduct(_mToeHelper.getProduct(product));
+        }
     }
 }
